@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, FlatList } from 'react-native';
 
 import BlockItem from './BlockItem';
 import ListSeparator from './ListSeparator';
@@ -14,7 +14,7 @@ const BlockList = ({ blocks }) => {
       style={styles.list}
       contentContainerStyle={{
         flexGrow: 1,
-        }}
+      }}
       ItemSeparatorComponent={<ListSeparator />}
     />
   );

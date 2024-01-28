@@ -3,7 +3,7 @@ import { StyleSheet, View, Text } from 'react-native';
 import { getSummary } from '../services/database';
 
 const StatPanel = ({ stats }) => {
-  if (!stats) return null
+  if (!stats) return null;
 
   return(
     <View style={{ flexDirection: 'row', justifyContent: 'space-evenly', alignSelf: 'stretch' }}>
@@ -33,9 +33,9 @@ const Home = ({ db }) => {
     <View style={styles.container}>
       <View style={{ alignItems: 'center', flexGrow: 0.5 }}>
         <Text style={styles.pageTitle}>HOME</Text>
-        
+
         <StatPanel stats={stats} />
-        
+
       </View>
     </View>
   );

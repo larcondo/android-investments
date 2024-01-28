@@ -8,7 +8,7 @@ const Funds = ({ db }) => {
   const [fundName, setFundName] = useState('');
   const [fundDesc, setFundDesc] = useState('');
   const [fundArray, setFundArray] = useState([]);
-  
+
   useEffect(() => {
     getFunds(db, setFundArray);
   }, []);
@@ -22,7 +22,7 @@ const Funds = ({ db }) => {
     }
     setFundName('');
     setFundDesc('');
-  }
+  };
 
   if (!db) return(<View><Text>No database!</Text></View>);
 

@@ -11,8 +11,8 @@ const Blocks = ({ db }) => {
 
   useEffect(() => {
     if (db) {
-      getBlocks(db, setBlockArray)
-    }    
+      getBlocks(db, setBlockArray);
+    }
   }, []);
 
   const saveBlock = async () => {
@@ -20,11 +20,11 @@ const Blocks = ({ db }) => {
       await addBlock(db, blockName, blockDesc);
       getBlocks(db, setBlockArray);
     } catch(e) {
-      console.log(e.message)
+      console.log(e.message);
     }
     setBlockName('');
     setBlockDesc('');
-  }
+  };
 
   if (!db) return(<View><Text>No database!</Text></View>);
 
@@ -52,7 +52,7 @@ const Blocks = ({ db }) => {
         </View>
 
         <Text style={styles.title}>BLOQUES</Text>
-        
+
         <BlockList blocks={blockArray} />
       </View>
     </View>

@@ -1,6 +1,6 @@
 import { StyleSheet, View } from 'react-native';
 import { Route, Routes, Navigate } from 'react-router-native';
-import { openDatabase, createFundsTable, createBlocksTable, createEntriesTable, defaultEntries } from '../services/database';
+import { openDatabase, createFundsTable, createBlocksTable, createEntriesTable } from '../services/database';
 import { useEffect } from 'react';
 
 import AppBar from './AppBar';
@@ -16,7 +16,7 @@ const Main = () => {
     createFundsTable(db);
     createBlocksTable(db);
     createEntriesTable(db);
-  }, [])
+  }, []);
 
   return(
     <View style={styles.container}>

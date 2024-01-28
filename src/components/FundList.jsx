@@ -4,8 +4,8 @@ import FundItem from './FundItem';
 import ListSeparator from './ListSeparator';
 
 const FundList = ({ funds }) => {
-  if (!funds || funds.length < 1) return <Text>No hay fondos por el momento.</Text>
-  
+  if (!funds || funds.length < 1) return <Text>No hay fondos por el momento.</Text>;
+
   return(
     <FlatList
       data={funds}

@@ -34,6 +34,6 @@ const styles = StyleSheet.create({
     width: '50%',
     color: '#888',
   }
-})
+});
 
 export default BlockItem;

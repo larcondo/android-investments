@@ -1,0 +1,36 @@
+{
+  "plugins": [
+    "react",
+    "react-native"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
+  "env": {
+    "react-native/react-native": true
+  },
+  "rules": {
+    "indent": ["error", 2],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "eqeqeq": "error",
+    "no-trailing-spaces": "error",
+    "object-curly-spacing": ["error", "always"],
+    "no-console": "off",
+    "no-unused-vars": "warn",
+    "arrow-spacing": [
+      "error",
+      { "before": true, "after": true }
+    ],
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
+  }
+}

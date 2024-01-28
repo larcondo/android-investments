@@ -16,13 +16,13 @@ const BlockPage = ({ db }) => {
   const [fundId, setFundId] = useState(1);
   const [entryDate, setEntryDate] = useState('');
   const [entryValue, setEntryValue] = useState('');
-  const [funds, setFunds] = useState([])
+  const [funds, setFunds] = useState([]);
   const [entries, setEntries] = useState([]);
   const [formVisible, setFormVisible] = useState(false);
 
   const mapOptions = ( array ) => {
     const newArray = array.map(f => {
-      return { value: f.id, label: f.nombre }
+      return { value: f.id, label: f.nombre };
     });
     setFunds( newArray );
   };
@@ -36,8 +36,8 @@ const BlockPage = ({ db }) => {
   }, [id]);
 
   const submit = async () => {
-    if (fundId === '') return null
-    if (entryDate === '' || entryValue === '') return null
+    if (fundId === '') return null;
+    if (entryDate === '' || entryValue === '') return null;
 
     try {
       await addEntry(db, fundId, id, entryDate, entryValue);
@@ -45,14 +45,14 @@ const BlockPage = ({ db }) => {
     } catch(e) {
       console.log(e);
     }
-  }
+  };
 
   if (!db) return(<View><Text>No database!</Text></View>);
   if (!id) return null;
 
   if (loading) return <View style={{ flex: 1, justifyContent: 'center' }}>
     <ActivityIndicator size='large' color='#00137F' />
-  </View>
+  </View>;
 
   return(
     <View style={styles.container}>
@@ -64,16 +64,14 @@ const BlockPage = ({ db }) => {
         <Text style={styles.headerTitle} numberOfLines={1}>Block: { id }</Text>
       </View>
 
-      
-
-      { !formVisible && <Pressable style={[styles.boton, {alignSelf: 'stretch', margin: 20}]} onPress={() => setFormVisible(true)}>
+      { !formVisible && <Pressable style={[styles.boton, { alignSelf: 'stretch', margin: 20 }]} onPress={() => setFormVisible(true)}>
         <Text style={styles.botonText}> + Agregar</Text>
       </Pressable> }
 
       { formVisible && <View style={styles.form}>
 
         <Dropdown value={fundId} items={funds} onValueChange={setFundId} />
-        
+
         <TextInput
           placeholder='YYYY-MM-DD'
           value={entryDate}
@@ -88,11 +86,11 @@ const BlockPage = ({ db }) => {
           style={styles.input}
         />
 
-        <View style={{ flexDirection: 'row', justifyContent: 'space-around', gap: 10, paddingVertical: 20,}}>
-          <Pressable style={[styles.boton, { backgroundColor: 'lightgray', flexGrow: 1}]}>
+        <View style={{ flexDirection: 'row', justifyContent: 'space-around', gap: 10, paddingVertical: 20, }}>
+          <Pressable style={[styles.boton, { backgroundColor: 'lightgray', flexGrow: 1 }]}>
             <Text style={styles.botonText} onPress={() => setFormVisible(false)}>Cancelar</Text>
           </Pressable>
-          <Pressable style={[styles.boton, { flexGrow: 1}]} onPress={submit} >
+          <Pressable style={[styles.boton, { flexGrow: 1 }]} onPress={submit} >
             <Text style={styles.botonText}>Agregar entrada</Text>
           </Pressable>
         </View>
@@ -100,7 +98,7 @@ const BlockPage = ({ db }) => {
         <Text style={styles.query}>
           INSERT VALUES ({id}, {fundId}, {entryDate}, {entryValue});
         </Text>
-        
+
       </View>}
 
       <EntryList entries={entries} />

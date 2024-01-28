@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
   text: {
     padding: 10,
   },
-})
+});
 
 export default AppBarLink;

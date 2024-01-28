@@ -10,7 +10,7 @@ const EntryList = ({ entries }) => {
     <FlatList
       data={entries}
       keyExtractor={item => item.id}
-      renderItem={({item}) => <EntryItem entry={item} />}
+      renderItem={({ item }) => <EntryItem entry={item} />}
       style={styles.list}
       ItemSeparatorComponent={<ListSeparator />}
     />

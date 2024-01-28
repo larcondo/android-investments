@@ -15,14 +15,14 @@ const fechaToString = ( f ) => {
     mes10: 'oct',
     mes11: 'nov',
     mes12: 'dic',
-  }
+  };
 
   return `${values[2]} ${meses['mes' + values[1]]} ${values[0]}`;
-}
+};
 
 const currency = ( val ) => {
   return '$ ' + val.toLocaleString('es-ES');
-}
+};
 
 const EntryItem = ({ entry }) => {
   return(
