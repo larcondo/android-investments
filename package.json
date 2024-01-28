@@ -9,10 +9,18 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/metro-config": "^0.17.3",
+    "@expo/webpack-config": "~19.0.1",
+    "@react-native-picker/picker": "^2.6.1",
     "expo": "~50.0.3",
+    "expo-sqlite": "~13.2.1",
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
-    "react-native": "0.73.2"
+    "react-dom": "18.2.0",
+    "react-native": "0.73.2",
+    "react-native-picker-select": "^9.0.0",
+    "react-native-web": "~0.19.6",
+    "react-router-native": "^6.21.3"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"
