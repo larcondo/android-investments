@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text, TextInput, Pressable } from 'react-native';
 import { useEffect, useState } from 'react';
-import { getFunds, addFund } from '../services/database';
+import { getFunds, addFund } from '../services/fund';
 
 import FundList from './FundList';
 

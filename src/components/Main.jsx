@@ -1,6 +1,9 @@
 import { StyleSheet, View } from 'react-native';
 import { Route, Routes, Navigate } from 'react-router-native';
-import { openDatabase, createFundsTable, createBlocksTable, createEntriesTable } from '../services/database';
+import { openDatabase } from '../services/database';
+import { createFundsTable } from '../services/fund';
+import { createBlocksTable } from '../services/block';
+import { createEntriesTable } from '../services/entry';
 import { useEffect } from 'react';
 
 import AppBar from './AppBar';

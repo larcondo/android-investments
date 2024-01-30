@@ -26,12 +26,3 @@ export const INSERT_ENTRY = `
 export const DELETE_ENTRY_BY_ID = `
   DELETE FROM entries WHERE id=?;
 `;
-
-export const DEFAULT_ENTRIES = `
-  INSERT INTO entries (fund_id, block_id, fecha, valor)
-  VALUES
-  (1,1,'2023-12-15', 1000.56),
-  (2,1,'2023-12-15', 2468.23),
-  (1,2,'2023-12-16', 1025.89),
-  (2,2,'2023-12-16', 2523.11)
-`;

@@ -1,10 +1,7 @@
 import { View, Text, StyleSheet, TextInput, Pressable, ActivityIndicator } from 'react-native';
 import { useParams, Link } from 'react-router-native';
-import {
-  getEntriesByBlock,
-  getFunds,
-  addEntry,
-} from '../services/database';
+import { addEntry, getEntriesByBlock } from '../services/entry';
+import { getFunds } from '../services/fund';
 import { useEffect, useState } from 'react';
 
 import EntryList from './EntryList';
