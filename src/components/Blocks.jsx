@@ -34,13 +34,13 @@ const Blocks = ({ db }) => {
         <View style={styles.form}>
           <View style={styles.inputContainer}>
             <TextInput
-              placeholder='Nombre...'
+              placeholder='Nombre de bloque...'
               style={styles.textInput}
               value={blockName}
               onChangeText={(text) => setBlockName(text)}
             />
             <TextInput
-              placeholder='Descripción...'
+              placeholder='Descripción de bloque...'
               style={styles.textInput}
               value={blockDesc}
               onChangeText={(text) => setBlockDesc(text)}
@@ -86,14 +86,14 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
   },
   boton: {
-    backgroundColor: 'blue',
+    backgroundColor: 'lightgray',
     padding: 10,
     borderRadius: 4,
     alignSelf: 'center',
     margin: 10,
   },
   botonText: {
-    color: 'white',
+    color: 'black',
   },
   title: {
     fontWeight: 'bold',

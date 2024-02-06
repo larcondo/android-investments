@@ -1,38 +1,18 @@
 import { StyleSheet, Text, View } from 'react-native';
-
-const fechaToString = ( f ) => {
-  const values = f.split('-');
-  const meses = {
-    mes01: 'ene',
-    mes02: 'feb',
-    mes03: 'mar',
-    mes04: 'abr',
-    mes05: 'may',
-    mes06: 'jun',
-    mes07: 'jul',
-    mes08: 'ago',
-    mes09: 'sep',
-    mes10: 'oct',
-    mes11: 'nov',
-    mes12: 'dic',
-  };
-
-  return `${values[2]} ${meses['mes' + values[1]]} ${values[0]}`;
-};
-
-const currency = ( val ) => {
-  return '$ ' + val.toLocaleString('es-ES');
-};
+import { Link } from 'react-router-native';
+import { fechaToString, currency } from '../utils/general';
 
 const EntryItem = ({ entry }) => {
   return(
-    <View style={styles.item}>
-      <View>
-        <Text style={styles.fondo}>{ entry?.fund }</Text>
-        <Text style={styles.fecha}>{ fechaToString(entry.fecha) }</Text>
+    <Link to={`/entry/${entry.id}`} underlayColor='#e3e3e3'>
+      <View style={styles.item}>
+        <View>
+          <Text style={styles.fondo}>{ entry?.fund }</Text>
+          <Text style={styles.fecha}>{ fechaToString(entry.fecha) }</Text>
+        </View>
+        <Text style={styles.valor}>{ currency(entry.valor) }</Text>
       </View>
-      <Text style={styles.valor}>{ currency(entry.valor) }</Text>
-    </View>
+    </Link>
   );
 };
 

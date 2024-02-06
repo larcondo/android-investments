@@ -11,6 +11,7 @@ import Home from './Home';
 import Funds from './Funds';
 import Blocks from './Blocks';
 import BlockPage from './BlockPage';
+import EntryPage from './EntryPage';
 
 const db = openDatabase();
 
@@ -29,6 +30,7 @@ const Main = () => {
         <Route path='/funds' element={<Funds db={db} />} />
         <Route path='/blocks' element={<Blocks db={db} />} />
         <Route path='/block/:id' element={<BlockPage db={db} /> } />
+        <Route path='/entry/:id' element={<EntryPage db={db} /> } />
         <Route path='*' element={<Navigate to='/' replace />} />
       </Routes>
     </View>

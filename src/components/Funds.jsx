@@ -32,13 +32,13 @@ const Funds = ({ db }) => {
         <View style={styles.form}>
           <View style={styles.inputContainer}>
             <TextInput
-              placeholder='Nombre...'
+              placeholder='Nombre de fondo...'
               style={styles.textInput}
               value={fundName}
               onChangeText={(text) => setFundName(text)}
             />
             <TextInput
-              placeholder='Descripción...'
+              placeholder='Descripción de fondo...'
               style={styles.textInput}
               value={fundDesc}
               onChangeText={(text) => setFundDesc(text)}

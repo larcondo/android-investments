@@ -17,6 +17,12 @@ const BlockPage = ({ db }) => {
   const [entries, setEntries] = useState([]);
   const [formVisible, setFormVisible] = useState(false);
 
+  const clearFields = () => {
+    setFundId(1);
+    setEntryDate('');
+    setEntryValue('');
+  };
+
   const mapOptions = ( array ) => {
     const newArray = array.map(f => {
       return { value: f.id, label: f.nombre };
@@ -39,6 +45,8 @@ const BlockPage = ({ db }) => {
     try {
       await addEntry(db, fundId, id, entryDate, entryValue);
       getEntriesByBlock(db, id, setEntries);
+      clearFields();
+      setFormVisible(false);
     } catch(e) {
       console.log(e);
     }
