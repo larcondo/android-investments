@@ -15,7 +15,7 @@ export const ALL_ENTRIES = `
 export const ENTRIES_BY_BLOCK = `
   SELECT entries.*, funds.nombre AS fund 
   FROM entries JOIN funds ON entries.fund_id=funds.id
-  WHERE block_id=? ORDER BY fecha DESC
+  WHERE block_id=? ORDER BY fecha ASC
 `;
 
 export const ENTRY_BY_ID = `

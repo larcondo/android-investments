@@ -10,7 +10,16 @@ const EntryItem = ({ entry }) => {
           <Text style={styles.fondo}>{ entry?.fund }</Text>
           <Text style={styles.fecha}>{ fechaToString(entry.fecha) }</Text>
         </View>
-        <Text style={styles.valor}>{ currency(entry.valor) }</Text>
+        <View>
+          <Text style={styles.valor}>{ currency(entry.valor) }</Text>
+          <Text style={[
+            styles.prevDiff,
+            entry.prevDiff && entry.prevDiff < 0 ? { color: 'red' } : null,
+            entry.prevDiff && entry.prevDiff > 0 ? { color: 'green' } : null
+          ]}>
+            { entry.prevDiff ? currency(entry.prevDiff) : 'Inicial' }
+          </Text>
+        </View>
       </View>
     </Link>
   );
@@ -34,6 +43,11 @@ const styles = StyleSheet.create({
   valor: {
     fontSize: 20,
     alignSelf: 'center',
+  },
+  prevDiff: {
+    textAlign: 'right',
+    fontSize: 12,
+    color: '#999',
   }
 });
 

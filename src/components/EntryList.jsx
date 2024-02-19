@@ -13,6 +13,7 @@ const EntryList = ({ entries }) => {
       renderItem={({ item }) => <EntryItem entry={item} />}
       style={styles.list}
       ItemSeparatorComponent={<ListSeparator />}
+      scrollEnabled={false}
     />
   );
 };

@@ -1,11 +1,15 @@
-import { View, Text, StyleSheet, TextInput, Pressable, ActivityIndicator } from 'react-native';
+import {
+  View, Text, StyleSheet, TextInput,
+  Pressable, ActivityIndicator,
+  ScrollView,
+} from 'react-native';
 import { useParams, Link } from 'react-router-native';
 import { addEntry, getEntriesByBlock } from '../services/entry';
 import { getFunds } from '../services/fund';
 import { useEffect, useState } from 'react';
 
-import EntryList from './EntryList';
 import Dropdown from './Dropdown';
+import FundStats from './FundStats';
 
 const BlockPage = ({ db }) => {
   const { id } = useParams();
@@ -34,7 +38,7 @@ const BlockPage = ({ db }) => {
     if(db && id) {
       getEntriesByBlock(db, id, setEntries);
       getFunds(db, mapOptions);
-      setTimeout(() => setLoading(false), 250);
+      setTimeout(() => setLoading(false), 200);
     }
   }, [id]);
 
@@ -60,7 +64,7 @@ const BlockPage = ({ db }) => {
   </View>;
 
   return(
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Link to={'/blocks'} style={styles.link} underlayColor={'#f5f5f5'}>
           <Text>← VOLVER</Text>
@@ -106,9 +110,19 @@ const BlockPage = ({ db }) => {
 
       </View>}
 
-      <EntryList entries={entries} />
+      { funds &&
+        funds.map( f => {
+          return(
+            <FundStats
+              key={f.label}
+              title={f.label}
+              entryArray={entries.filter(e => e.fund === f.label)}
+            />
+          );
+        })
+      }
 
-    </View>
+    </ScrollView>
   );
 };
 
